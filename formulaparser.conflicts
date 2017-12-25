@@ -1,0 +1,105 @@
+
+** Conflict (shift/reduce) in state 44.
+** Token involved: ID
+** This state is reached from prog after reading:
+
+expr IMPLIES expr IMPLIES expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+expr EOF 
+(?)
+
+** In state 44, looking ahead at ID, reducing production
+** expr -> expr IMPLIES expr 
+** is permitted because of the following sub-derivation:
+
+expr IMPLIES expr ID // lookahead token appears
+             expr IMPLIES expr . 
+
+** In state 44, looking ahead at ID, shifting is permitted
+** because of the following sub-derivation:
+
+expr IMPLIES expr 
+             expr IMPLIES expr . ID 
+
+** Conflict (shift/reduce) in state 28.
+** Token involved: ID
+** This state is reached from prog after reading:
+
+expr UNION expr INTERSECTION expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+expr EOF 
+(?)
+
+** In state 28, looking ahead at ID, reducing production
+** expr -> expr INTERSECTION expr 
+** is permitted because of the following sub-derivation:
+
+expr UNION expr ID // lookahead token appears
+           expr INTERSECTION expr . 
+
+** In state 28, looking ahead at ID, shifting is permitted
+** because of the following sub-derivation:
+
+expr UNION expr 
+           expr INTERSECTION expr . ID 
+
+** Conflict (shift/reduce) in state 26.
+** Token involved: ID
+** This state is reached from prog after reading:
+
+expr UNION expr UNION expr 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+expr EOF 
+(?)
+
+** In state 26, looking ahead at ID, reducing production
+** expr -> expr UNION expr 
+** is permitted because of the following sub-derivation:
+
+expr UNION expr ID // lookahead token appears
+           expr UNION expr . 
+
+** In state 26, looking ahead at ID, shifting is permitted
+** because of the following sub-derivation:
+
+expr UNION expr 
+           expr UNION expr . ID 
+
+** Conflict (shift/reduce) in state 9.
+** Token involved: ID
+** This state is reached from prog after reading:
+
+expr UNION func 
+
+** The derivations that appear below have the following common factor:
+** (The question mark symbol (?) represents the spot where the derivations begin to differ.)
+
+prog 
+expr EOF 
+(?)
+
+** In state 9, looking ahead at ID, reducing production
+** expr -> func 
+** is permitted because of the following sub-derivation:
+
+expr UNION expr ID // lookahead token appears
+           func . 
+
+** In state 9, looking ahead at ID, shifting is permitted
+** because of the following sub-derivation:
+
+expr UNION expr 
+           func 
+           func . ID 

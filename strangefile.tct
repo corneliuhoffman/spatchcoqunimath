@@ -1,0 +1,6 @@
+ the stat Definition divides (a b:nat) := exists x:nat, b = a*x. 
+whose total number of vertices is 1 
+ the stat Definition divides (a b:nat) := exists x:nat, b = a*x. 
+whose total number of vertices is 1 
+ the stat Theorem refldiv:forall a b c, (a | b) /\\ (b | c) -> (a |c). 
+whose total number of vertices is 16 

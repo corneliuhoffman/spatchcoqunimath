@@ -1,0 +1,6 @@
+
+Lemma a(P Q:Prop):P\/Q->Q\/P. 
+
+Lemma a(P Q:Prop):P\/Q->Q\/P. 
+
+Lemma a(P Q:Prop):P\/Q->Q\/P. 

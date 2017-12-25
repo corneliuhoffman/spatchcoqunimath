@@ -1,0 +1,1 @@
+/home/hoff/UniMath/sub/coq/bin/coqtop -R /home/hoff/UniMath/UniMath UniMath

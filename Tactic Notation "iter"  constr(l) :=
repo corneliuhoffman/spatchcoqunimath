@@ -1,0 +1,26 @@
+Tactic Notation "iter"  constr(l) :=
+  let rec go l :=
+  match l with ?x :: ?l => unfold x  end 
+  in go l.
+
+
+  Tactic Notation "iter" tactic(tac) tactic(l) :=
+  let rec go l :=
+  match l with ?x :: ?l => tac x || go l end in go l.
+
+  Ltac unf2 v :=
+  match v with 
+  |(?a, ?b, ?c) => unfold a; unf2 (b, c)
+  | (?a, ?b) => unfold a; unf2  b
+  | ?a => try (unfold v) || idtac  end.
+
+
+Tactic Notation 'Rewrite' 'goal' 'using' 'the' 'definition' 'of' constr(a):= let Ltac unf2 v :=match v with (?a, ?b, ?c) => unfold a; unf2 (b, c) | (?a, ?b) => unfold a; unf2  b | ?a => try (unfold v) || idtac  end in unf2 constr:(a).
+
+
+  Ltac unf6 v :=
+  match v with 
+  |(?a ?b) => let s:= constr:(b) in unfold a; unf6 s
+  | ?a => try (unfold v) || idtac  end.
+
+  Tactic Notation "Rewrite" "goal" "using" "the" "definition" "of" constr(a) := let Ltac unf2 v :=  match v with |(?a, ?b, ?c) => unfold a; unf2 (b, c) | (?a, ?b) => unfold a; unf2  b| ?a => try (unfold v) || idtac  end in unf2 constr:(a).") 

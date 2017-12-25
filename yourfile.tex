@@ -1,0 +1,48 @@
+
+\documentclass[11pt, oneside]{article}   	
+
+\usepackage{color}
+\usepackage{graphicx}				
+
+\usepackage{amssymb}
+\newtheorem{Theorem}{Theorem}
+\newtheorem{Lemma}{Lemma}
+\newtheorem{Proposition}{Proposition}
+\newtheorem{Definition}{Definition}
+\newtheorem{Inductive}{Inductive Definition}
+\newtheorem{Variable}{Variable}
+\newtheorem{Variables}{Variables}
+
+\newtheorem{Notation}{Notation}
+\newtheorem{Axiom}{Axiom}
+ \usepackage{tcolorbox}
+ \tcbuselibrary{skins}
+ \tcbuselibrary{theorems}
+\tcbuselibrary{breakable}
+
+
+\newcommand{\mybox}[1]{\begin{tcolorbox}[colback=white,colframe=gray!20!white, breakable, skin=enhancedmiddle]#1 \end{tcolorbox}}
+\title{Brief Article}
+\author{The Author}
+\date{}							% Activate to display a given date or no date
+
+\begin{document}
+\maketitle
+
+\begin{Variables}[Socrates] \label{Variables:Socrates}
+$Socrates\,Man\,Mortal\,:Prop.$
+ \end{Variables}
+\begin{Axiom}[A1] \label{Axiom:A1}
+$A1\,:\,Socrates\,\Rightarrow \,Man.$
+ \end{Axiom}
+\begin{Axiom}[A2] \label{Axiom:A2}
+$A2\,:\,Man\,\Rightarrow \,Mortal.$
+ \end{Axiom}
+\begin{Lemma}[soc] \label{Lemma:soc}
+$soc:\,Socrates\Rightarrow Mortal.$
+ \end{Lemma}
+
+
+ Proof: We will assume $$Hyp : Socrates $$ and show $$Mortal .$$$Hyp$ and $A1$ imply $$H : Man .$$ $H$ and $A2$ imply $$H0 : Mortal .$$ $Mortal $ follows trivially from the assumptions.
+
+ We have showed that if $$Hyp : Socrates $$ then $$Mortal $$ a proof of $Socrates \Rightarrow Mortal $.This is done\end{document}
